@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Unit Calculator</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        background-color: #292929;
+    height:130%;
+    width: 100%;
+    position: relative;
+background: #4776E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/* BORDER CSS*/
+
+
+
+
+
+
+
+
+#starttimehour{
+        border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+#starttimeminutes{
+        border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+#endtimehour{
+        border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+#endtimeminutes{
+        border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+h1 {
+        position: relative;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-size: 3em;
+        letter-spacing: 4px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #000, white, #753a88);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: animate 5s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+         padding:2px 20px 25px 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes animate {
+0% {
+        background-position: -500%;
+}
+100% {
+        background-position: 500%;
+}
+}
+.div1{
+        color: black;
+        -webkit-animation: A43 5s infinite; /* Chrome, Safari, Opera */
+        animation: A43 5s infinite;
+        position:fixed;
+        left:30%;
+}
+
+
+
+
+
+
+
+
+@-webkit-keyframes A43 {
+50% {text-shadow: 10px 10px 15px pink;}
+}
+
+
+
+
+
+
+
+@keyframes A43 {
+50% {
+        text-shadow: 12px 17px 22px skyblue;
+        color: white;
+}
+}
+.div2{
+        background:#3a3fa1;
+        width:400px;
+        height:540px;
+    border-radius: 25px;
+        position:absolute;
+        left:35%;
+        top:70%;
+        opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+p{
+        font-size:150%;
+        color:white;
+        font-family:Times New Roman;
+        padding:0px;
+        margin:20px;
+        font-weight: bold;
+        opacity: 1;
+}
+button{
+        font-weight:bold;
+        font-size:150%;
+        font-family:Times New Roman;
+        padding:10px 20px;
+        color:white;
+        background-color: #a4508b;
+background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+
+
+
+        border: 1px solid rgba(0,0,0,.2);
+        margin: 0;
+        box-shadow: 0 2px 2px rgba(0,0,0,.2);
+        vertical-align: middle;
+        border-radius: 4px;
+        border-radius: 4px;
+        background-color: red;
+        border-radius: 7px;
+        border: 1px solid;
+          padding: 10px;
+         box-shadow: 3px 3px #888888;
+}
+
+
+
+
+
+
+
+
+input{
+        font-size:100%;
+        font-family:Times New Roman;
+        font-weight: bold;
+}
+
+
+
+
+
+
+
+
+.div2 p{
+        display: inline-block;
+}
+
+
+
+
+
+
+
+
+span{
+        font-size:20px;
+}
+
+
+
+
+
+
+
+
+.divh{
+        position:fixed;
+        left:70%;
+        top:190px;
+        display:block;
+        color:black;
+        border: 3px dotted black;
+        border-radius:5px;
+        height:150px;
+        text-align: center;
+
+}
+
+
+
+
+
+a{
+        color:white;
+        position:relative;
+        left:85%;
+        top:10%;
+        height:20px;
+        font-size:30px;
+}
+
+
+
+.note{
+         position:fixed;
+        left:4%;
+        top:200px;
+        display:block;
+        color:black;
+        border: 3px dotted black;
+        border-radius:5px;
+        height:150px;
+        width:350px ;
+        text-align: left;
+        z-index: 1;
+
+
+
+}
+.note h2{
+    text-align: center;
+}
+
+
+
+.divh p{
+            color: black;
+}
+
+
+
+img{
+    width: 30%;
+    height: 70%;
+}
+
+
+
+
+</style>
+</head>
+<body onload="focusFunction()">
+
+
+
+<div>
+    <img src="logo.png" >
+</div>
+
+
+
+<div class="divh">
+<p>Developer: Aniket Gaykwad</p>
+<p>Designed by: Saurabh Buradkar</p>
+<p>GRBT - Index</p>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="div1">
+<h1>Unit Calculator</h1>
+</div>
+<div class="div2">
+<p>Start Time &nbsp;:&nbsp; </p><br><p><span>Hour</span> &nbsp;&nbsp;&nbsp;</p>&nbsp; <input type="text" id="starttimehour" placeholder="HH"> &nbsp;&nbsp; <br><p><span>Minutes</span></p>&nbsp;&nbsp;<input type="text" id="starttimeminutes" placeholder="MM">
+<br>
+<p>End Time&nbsp;:&nbsp; </p> <br><p><span>Hour</span>&nbsp;&nbsp;&nbsp;</p> &nbsp;&nbsp;<input type="text" id="endtimehour" placeholder="HH"> &nbsp;&nbsp; <br><p><span>Minutes</span></p>&nbsp;&nbsp;<input type="text" id="endtimeminutes" placeholder="MM"><br>
+<p id="units">Unit : 0</p><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+<button id="main" onclick="unitCalculator()">Calculate Unit</button>&nbsp;&nbsp;&nbsp;
+<button onclick="clearData()">Clear</button>
+</div>
+
+
+
+
+<script>
+function focusFunction(){
+document.getElementById("starttimehour").focus();
+}
+</script>
+
+
+
+
+
+
+
+<script>
+function unitCalculator() {
+
+
+
+var shour = Number(document.getElementById("starttimehour").value);
+var sminutes = Number(document.getElementById("starttimeminutes").value);
+var ehour = Number(document.getElementById("endtimehour").value);
+var eminutes = Number(document.getElementById("endtimeminutes").value);
+var stime = shour*60 + sminutes;
+var etime = ehour*60 + eminutes;
+if (shour< 1381 && ehour < 1381 && sminutes < 60 && eminutes < 60 && shour >= 0 && ehour >= 0 && sminutes >= 0 && eminutes >= 0  ){
+if (stime<=etime){
+var units = etime - stime;
+}
+else
+{
+
+
+
+var units =1440 - (stime - etime);
+}
+
+
+
+        document.getElementById("units").innerHTML = "Unit : " + units;
+}
+else
+{
+var message = "Please Enter Valid Details"
+document.getElementById("units").innerHTML = message;
+}
+}
+function clearData() {
+document.getElementById("starttimehour").value = "";
+document.getElementById("starttimeminutes").value = "";
+document.getElementById("endtimehour").value = "";
+document.getElementById("endtimeminutes").value = "";
+document.getElementById("units").innerHTML = "Unit : 0" ;
+}
+
+
+
+var input = document.getElementById("endtimeminutes");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("main").click();
+  }
+});
+
+
+
+
+
+</script>
+<div class ="note">
+    <h2>NOTE</h2>
+    <ul class="b">
+  <li> This tool only calculate in 24 hour system</li>
+  <li>In end minutes field press "Enter" to calutate</li>
+
+</ul>
+</div>
+</body>
+</html>
